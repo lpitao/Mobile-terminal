@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<!--<meta name="viewport" content="width=device-width,initial-scale=2.0,minimum-scale=2.0,maximum-scale=1.0,user-scalable=no">  -->
+		<title></title>
+		 <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+ 		 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<style>
+			.kuangchange{
+				width: 1rem;
+				height: 1rem;
+				background: antiquewhite;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body class="m-navlist">
+		<div class="kuangchange">
+			123456
+		</div>
+		<script>
+			//根据屏幕大小以及dpi调整缩放和大小
+			(function(){
+				var scale = 1.0;
+				var radio = 1;
+				if ( window.devicePixelRatio >= 2){
+					scale *= 0.5;
+					ratio *= 2;
+				}
+				var text = '<meta name="viewport" content = "initial-scale='+ scale +',maximum-scale=' + scale + ',minimum-scale=' + scale + ',width=device-width,user-scalable=no" />';
+				document.write(text);
+				document.documentElement.style.fontSize = 50*radio + 'px';
+			})();
+		</script>
+	</body>
+</html>

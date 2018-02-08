@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">  
+		<title></title>
+		 <script src="//code.jquery.com/jquery-1.9.1.js"></script>
+ 		 <script src="//code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+		<script type="text/javascript" src="js/jquery-1.11.1.min.js" ></script>
+		<style>
+			/*字号单独用px即可 ，这里建议大家用变量定义小中大正常集中字号常量就可以，不用每次去针对具体样式做字号调整。*/
+
+			@media screen and (max-width:321px){
+				.m-navlist{font-size:15px}
+			}
+			@media screen and (min-width:321px) and (max-width:400px){
+				.m-navlist{font-size:16px}
+			}
+			@media screen and (min-width:400px){
+				.m-navlist{font-size:18px}
+			}
+			.kuangchange{
+				width: 5rem;
+				height: 5rem;
+				background: antiquewhite;
+				margin: 0 auto;
+			}
+		</style>
+	</head>
+	<body class="m-navlist">
+		<div class="kuangchange">
+			123456
+		</div>
+		<script>
+			
+			//设置基本的字号,基本元素取材除100即可得到rem的大小，当然也可以用16px换算改变根字号为6.25rem即可。因为还有很大比例的手机设计为320的，所以这里考虑为640的。当屏幕大于640的时候，不再放大，让页面处于水平居中640px显示。
+			function fontAuto(){
+				var deviceWidth = document.documentElement.clientWidth;
+				if(deviceWidth > 640) 
+					deviceWidth = 640;
+				document.documentElement.style.fontSize = deviceWidth / 6.4 + 'px';
+			}
+			
+			fontAuto();
+			window.onresize = function(){
+				fontAuto();
+			}
+		</script>
+	</body>
+</html>
